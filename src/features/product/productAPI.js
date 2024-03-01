@@ -8,6 +8,17 @@ export function fetchAllProducts() {
   });
 }
 
+
+export function fetchAllProductsById(productId) {
+  return new Promise(async (resolve) => {
+    const response = await fetch("http://localhost:8000/products/"+productId);
+    const data = response.json();
+
+    resolve({ data });
+  });
+}
+
+
 export function fetchProductsByFilters(filter) {
   // {category:"laptops"}
   let queryString = "";
