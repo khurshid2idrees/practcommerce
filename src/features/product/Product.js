@@ -232,7 +232,6 @@ export function Product() {
   const dispatch = useDispatch();
   const products = useSelector(selectAllProducts);
 
-  const params = useParams();
 
   const handleFilter = (e, section, option) => {
     const newFilter = { [section.id]: option.value };
@@ -240,9 +239,8 @@ export function Product() {
   };
 
   useEffect(() => {
-    dispatch(fetchAllProductsAsync());
-    dispatch(fetchAllProductsByIdAsync(params.id));
-  }, [dispatch, params.id, handleFilter]);
+    dispatch(fetchAllProductsAsync());   
+  }, [dispatch]);
 
   return (
     <div className="bg-white">
