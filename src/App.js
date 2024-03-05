@@ -5,6 +5,8 @@ import ProductDetail from "./features/product/components/ProductDetail";
 import * as ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
+import Login from "./features/auth/components/Login";
+import Signup from "./features/auth/components/Signup";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +25,14 @@ const router = createBrowserRouter([
   {
     path: "/product-detail/:id",
     element: <ProductDetail />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/register",
+    element: <Signup />,
   },
 ]);
 
